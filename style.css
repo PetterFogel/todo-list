@@ -26,7 +26,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    margin-bottom: 2rem;
 }
 
 .container h1 {
@@ -66,4 +66,43 @@ form button {
 
 form button:hover {
     background: rgb(213, 89, 151);
+}
+
+/* Todo List */
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 25rem;
+    height: 3rem;
+    border: 2px solid #ddd;
+    border-radius: 0.4rem;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.todo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.delete {
+    font-size: 1.5rem;
+    color: hotpink;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    transition: all 300ms ease; 
+}
+
+.delete:hover {
+    color: rgb(213, 89, 151);
 }
