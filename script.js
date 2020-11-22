@@ -1,28 +1,41 @@
 window.addEventListener("load", main);
 
 function main() {
-    addTodo();
-    getTodoFromInputValue();
+    createTodoList();
 }
 
-function getTodoFromInputValue() {
-
-}
-
-function addTodo() {
-    // Fetch HTML input.
-    const todoInput = document.getElementById("todo-input");
-    const newTodo = todoInput.value;
-
-    // Fetch HTML button.
+function createTodoList() {
     const addTodoButton = document.getElementById("submit-btn");
-    addTodoButton.addEventListener("click", () => {
-        // Browser dont resfresh when clicking button.
-        event.preventDefault();
-        console.log(todoInput.value)
-
-        localStorage.setItem("Todo", todoInput.value);
-    });   
+    addTodoButton.addEventListener("click", createTodo);
 }
 
-// Skapa en tom array och pusha in todos.
+function createTodo() {
+    // Fetch HTML input and button.
+    const todoInput = document.getElementById("todo-input");
+    newTodo = todoInput.value
+
+    console.log(newTodo);
+    createTodoDiv(newTodo);
+}
+
+// Create Todo-item DIV
+function createTodoDiv(newTodo) {
+    event.preventDefault();
+
+    const todoList = document.querySelector(".todo-list");
+    
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo-item");
+
+    const todoItem = document.createElement("li");
+    todoItem.classList.add("todo");
+    todoItem.innerText = newTodo;
+    todoDiv.appendChild(todoItem);
+
+    const deleteButton = document.createElement("i");
+    deleteButton.innerHTML = '<i class="fas fa-times"></i>';
+    deleteButton.classList.add("delete")
+    todoDiv.appendChild(deleteButton);
+
+    todoList.appendChild(todoDiv);
+}
