@@ -38,4 +38,12 @@ function createTodoDiv(newTodo) {
     todoDiv.appendChild(deleteButton);
 
     todoList.appendChild(todoDiv);
+
+    removeTodo(deleteButton, todoDiv);
+}
+
+function removeTodo(deleteButton, todoDiv) {
+    deleteButton.addEventListener("click", () => {
+        todoDiv.remove();
+    });
 }
