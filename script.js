@@ -43,7 +43,7 @@ function createTodoDiv() {
 
     removeTodo(deleteButton, todoDiv);
 }
-
+// Remove todo from DOM and local storage.
 function removeTodo(deleteButton, todoDiv) {
     deleteButton.addEventListener("click", () => {
         todoDiv.remove();
